@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replicate iOS Calculator</title>
+    <!-- & Link the CSS file -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- & Link the JS file -->
+    <script defer src="./index.js"></script>
+    <!-- ~ defer -> the script will be downloaded in parallel to parsing the page and will execute after the page has finished parsing -->
+</head>
+<body>
+    <div class="row">
+        <div class="col">
+            <div class="calculator flex-center">
+                <div class="screen">0</div>
+                
+                <!-- & First row -->
+                <div class="keyboard">
+                    <div class="row">
+                        <div class="sub-col" data-button-type="operator" data-value="clear">AC</div>
+                        <div class="sub-col" data-button-type="operator" data-value="+/-">+/-</div>
+                        <div class="sub-col" data-button-type="operator" data-value="%">%</div>
+                        <div class="sub-col" data-button-type="operator" data-value="/">/</div>
+                    </div>
+
+                <!-- & Second row -->
+                    <div class="row">
+                        <div class="sub-col" data-button-type="digit" data-value="7">7</div>
+                        <div class="sub-col" data-button-type="digit" data-value="8">8</div>
+                        <div class="sub-col" data-button-type="digit" data-value="9">9</div>
+                        <div class="sub-col" data-button-type="operator" data-value="*">*</div>
+                    </div>
+
+                    <!-- & Third row -->
+                    <div class="row">
+                        <div class="sub-col" data-button-type="digit" data-value="4">4</div>
+                        <div class="sub-col" data-button-type="digit" data-value="5">5</div>
+                        <div class="sub-col" data-button-type="digit" data-value="6">6</div>
+                        <div class="sub-col" data-button-type="operator" data-value="-">-</div>
+                    </div>
+
+                    <!-- & Fourth row -->
+                    <div class="row">
+                        <div class="sub-col" data-button-type="digit" data-value="1">1</div>
+                        <div class="sub-col" data-button-type="digit" data-value="2">2</div>
+                        <div class="sub-col" data-button-type="digit" data-value="3">3</div>
+                        <div class="sub-col" data-button-type="operator" data-value="+">+</div>
+                    </div>
+
+                    <!-- & Fifth row -->
+                    <div class="row">
+                        <div class="sub-col" data-button-type="digit" data-value="0">0</div>
+                        <div class="sub-col" data-button-type="digit" data-value=".">.</div>
+                        <div class="sub-col" data-button-type="operator" data-value="="> = </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

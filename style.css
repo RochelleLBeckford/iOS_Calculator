@@ -1,0 +1,180 @@
+:root {
+    --digit-color: #434343;
+    --operator-color: #e98800fe;
+    --background-color: #1C1C1C;
+    --function-color: #9c9b9b;
+}
+
+* {
+    /* background-color: salmon; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family:cursive;
+}
+
+body {
+    background-color: var(--background-color);
+    color: #fff;
+    height: 100%;
+    width: 100%;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25%;
+    margin-right: 25%;
+    min-height: 50%;
+    min-width: 50%;
+    font-size: 1.3rem;
+}
+
+.calculator .screen {
+    background-color: salmon;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    padding-bottom: 15px;
+    padding-right: 10px;
+    font-size: 5.5rem;
+    width: 290px;
+    height: 150px;
+    overflow-x: hidden;
+    border: 2px solid var(--background-color);
+    border-radius: 25px 25px 0px 0px;
+}
+
+.calculator .keyboard {
+    height: 350px;
+    width: 290px;
+    padding: 10px;
+    background-color: wheat;
+    border: 2px solid var(--background-color);
+    border-radius: 0px 0px 25px 25px;
+}
+
+/* & First row */
+.keyboard .row:first-child .sub-col:not(:last-child) {
+    background-color: var(--function-color);
+    color: var(--background-color);
+}
+
+.keyboard .row:first-child .sub-col:last-child {
+    background-color: var(--operator-color);
+    color: #fff;
+}
+
+/* & Second, third, fourth, & fifth row */
+.keyboard .row:nth-child(2) .sub-col:not(:last-child),
+.keyboard .row:nth-child(3) .sub-col:not(:last-child),
+.keyboard .row:nth-child(4) .sub-col:not(:last-child),
+.keyboard .row:nth-child(5) .sub-col:not(:last-child) {
+    background-color: var(--digit-color);
+    color: var(--background-color);
+}
+
+.keyboard .row:nth-child(2) .sub-col:last-child,
+.keyboard .row:nth-child(3) .sub-col:last-child,
+.keyboard .row:nth-child(4) .sub-col:last-child,
+.keyboard .row:nth-child(5) .sub-col:last-child {
+    background-color: var(--operator-color);
+    color: #fff;
+}
+
+/* & When select every operator button */
+.selected_operator[data-value="clear"],
+.selected_operator[data-value="%"],
+.selected_operator[data-value="+/-"] {
+    animation: background-ani-fn .5s ease-out;
+}
+
+.selected_operator[data-value="="] {
+    animation: background-ani-equal .5s ease-out;
+}
+
+.selected_operator[data-button-type="digit"] {
+    animation: background-ani-equal .3s ease-out;
+}
+
+
+.selected_operator[data-button-type="operator"]:not(.selected_operator[data-value="clear"]):not(.selected_operator[data-value="%"]):not(.selected_operator[data-value="+/-"]):not(.selected_operator[data-value="="]) {
+    background-color: #d4d4d2;
+    color: var(--operator-color);
+    transition: background-color, color .5s ease-out;
+}
+
+@keyframes background-ani-fn {
+    0% {background-color: var(--function-color);}
+    50% {background-color: #fff;}
+    100% {background-color: var(--function-color);}
+}
+
+@keyframes background-ani-equal {
+    0% {background-color: var(--operator-color);}
+    50% {background-color: #fff;}
+    100% {background-color: var(--operator-color);}
+}
+
+@keyframes background-digit {
+    0% {background-color: var(--digit-color);}
+    50% {background-color: #fff;}
+    100% {background-color: var(--digit-color);}
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.col {
+    display: flex;
+    position: relative;
+    width: 100%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 100vh;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.sub-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 21%;
+    height: 86%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 21%;
+    flex: 0 0 21%;
+    max-width: 21%;
+    border-radius: 50%;
+    transition: background-color .8s ease-out;
+}
+
+.row:last-child > .sub-col:first-child {
+    display: flex;
+    justify-content: start;
+    padding-left: 25px;
+    width: 47;
+    -ms-flex: 0 0 47%;
+    flex: 0 0 47%;
+    max-width: 47%;
+    border-radius: 100px;
+    transition: background-color .8s ease-out;
+}
+
+.keyboard .row {
+    justify-content: space-between;
+    height: 20%;
+}
