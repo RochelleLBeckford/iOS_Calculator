@@ -12,10 +12,10 @@
 - [ ] Can use 'AC' to clear the value and it will clear start at 0 once again to perform a new operation
 - [ ] An Interactive and Modern webpage
 ---
-- [ ] Encompass 
-    - [] HTML 
+- [ ] Encompass: 
+    - [ ] HTML 
     - [ ] CSS
-    - [ ]JavaScript
+    - [ ] JavaScript
 - [ ] HTML → will be the structure and skeleton of how the app will appear on the webpage
 - [ ] CSS → encompass the style of the app and give it some flare
 - [ ] JavaScript → provide the functionality of the page
